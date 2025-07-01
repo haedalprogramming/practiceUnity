@@ -86,5 +86,5 @@ Inspector는 선택한 오브젝트의 **속성, 컴포넌트, 스크립트 등 
 
 ## 📎 참고 링크
 
-- [Unity Editor 기본 구조 – 공식 문서](https://docs.unity3d.com/Manual/UsingTheEditor.html)
+- [Unity Editor 기본 구조 – 공식 문서](https://docs.unity3d.com/Manual/unity-editor.html)
 - [Unity Hotkeys (단축키) 공식 리스트](https://docs.unity3d.com/Manual/UnityHotkeys.html)
