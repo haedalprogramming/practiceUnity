@@ -1,0 +1,75 @@
+# Unity Hub 설치 & LTS 버전 선택
+
+Unity 개발을 시작하기 위해 가장 먼저 해야 할 일은 **Unity Hub 설치**와 **안정적인 LTS(Long Term Support) 버전 선택**입니다.
+
+---
+
+## 🛠️ 1. Unity Hub 설치하기
+
+Unity Hub는 Unity 에디터와 프로젝트를 한 곳에서 관리할 수 있는 공식 관리 도구입니다.
+
+### ✅ 설치 방법
+
+1. [Unity 공식 다운로드 페이지](https://unity.com/download)로 이동합니다.
+2. **"Unity Hub 다운로드"** 버튼을 클릭합니다.
+3. 운영체제에 맞는 설치 파일을 실행하여 안내에 따라 설치를 완료합니다.
+
+<!-- 이미지: Unity Hub 다운로드 버튼 위치 -->
+<!-- ![unity-hub-download](images/unity_hub_download.png) -->
+
+설치 후, 바탕화면이나 시작 메뉴에서 Unity Hub를 실행하세요.
+
+---
+
+## 🧩 2. Unity LTS 버전 설치하기
+
+Unity는 **Tech Stream**과 **LTS(Long Term Support)** 두 가지 버전을 제공합니다.
+
+- **Tech Stream**: 최신 기능 포함, 실험적인 프로젝트에 적합
+- **LTS**: 안정성 위주, 수년간 지원 → **교육 및 팀 프로젝트에 권장**
+
+### ✅ LTS 버전 설치 절차
+
+1. Unity Hub 좌측 메뉴에서 **[Installs]** 탭 클릭
+2. **[Install Editor]** 또는 **[Install]** 버튼 클릭
+3. **LTS Recommended Release** 탭 선택
+4. 예: `Unity 2022.3.xf1 LTS` 버전 선택
+5. **필수 모듈** 선택:
+   - `Microsoft Visual Studio` (또는 IDE 없음 선택 가능)
+   - `WebGL Build Support` (필요 시)
+   - `Windows Build Support` / `Mac Build Support`
+
+6. [Install] 버튼 클릭 후 설치가 완료될 때까지 기다립니다.
+
+<!-- 이미지: Unity Hub LTS 버전 설치 화면 -->
+<!-- ![unity-lts-install](images/unity_lts_install.png) -->
+
+> 📌 **Tip**: 설치 후 `Unity > Preferences > External Tools`에서 Visual Studio 연결 상태를 꼭 확인하세요.
+
+---
+
+## 🎯 설치 완료 후 점검 Checklist
+
+| 항목 | 확인 여부 |
+|------|-----------|
+| Unity Hub 실행 가능 여부 | ✅ |
+| LTS 버전 설치 완료 | ✅ |
+| Visual Studio 또는 기타 코드 편집기 설치 여부 | ✅ |
+| 기본 Sample Project 실행 여부 | ✅ |
+
+---
+
+## 🔧 설치 후 첫 실행 팁
+
+- Unity Hub에서 **[Projects] > New Project**를 클릭하면 새 프로젝트 생성이 가능합니다.
+- 프로젝트 템플릿은 **2D Core**, **3D Core**, **URP**, **HDRP** 등 중 선택할 수 있으며, 교육 초반에는 **2D Core 또는 URP** 권장합니다.
+
+---
+
+## 📎 참고 링크
+
+- [Unity 다운로드 센터](https://unity.com/download)
+- [Unity LTS 릴리스 소개](https://unity.com/releases/lts)
+- [Unity Hub 가이드 (공식문서)](https://docs.unity3d.com/hub/manual/index.html)
+
+---
