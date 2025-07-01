@@ -1,0 +1,141 @@
+# 🧠 C# 문법 리뷰 (Unity에서 자주 사용하는 문법만)
+
+> 🎯 목적: Unity로 게임을 만들 때 자주 쓰이는 핵심 C# 문법만 빠르게 복습합니다.  
+> (변수, 흐름 제어, 클래스 중심)
+
+---
+
+## 1. 변수 (데이터 저장)
+
+```csharp
+int score = 0;              // 점수
+float speed = 5.0f;         // 이동 속도
+bool isJumping = false;     // 점프 여부
+string playerName = "Haedal"; // 문자열
+```
+
+> ✅ 실전에서 이렇게 사용돼요:
+```csharp
+void Update()
+{
+    transform.Translate(Vector3.right * speed * Time.deltaTime);
+}
+```
+
+---
+
+## 2. 흐름 제어 (조건문, 반복문)
+
+### ✅ if 조건문
+
+```csharp
+if (isJumping)
+{
+    Debug.Log("점프 중입니다!");
+}
+```
+
+### ✅ else if / else
+
+```csharp
+if (hp <= 0)
+{
+    Debug.Log("게임 오버");
+}
+else if (hp < 20)
+{
+    Debug.Log("위험!");
+}
+else
+{
+    Debug.Log("정상 상태");
+}
+```
+
+### ✅ switch문 (키 입력 등)
+
+```csharp
+switch (weaponType)
+{
+    case "sword":
+        Attack();
+        break;
+    case "bow":
+        Shoot();
+        break;
+}
+```
+
+### ✅ for 반복문
+
+```csharp
+for (int i = 0; i < 5; i++)
+{
+    Debug.Log("Wave " + i);
+}
+```
+
+### ✅ while 반복문
+
+```csharp
+while (isPlaying)
+{
+    time += Time.deltaTime;
+}
+```
+
+---
+
+## 3. 클래스와 메서드
+
+Unity에서는 클래스를 만들고 MonoBehaviour를 상속받아 게임 오브젝트에 붙입니다.
+
+```csharp
+public class PlayerController : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+
+    void Start()
+    {
+        Debug.Log("게임 시작!");
+    }
+
+    void Update()
+    {
+        Move();
+    }
+
+    void Move()
+    {
+        float inputX = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * inputX * moveSpeed * Time.deltaTime);
+    }
+}
+```
+
+### 🔹 주요 메서드
+
+| 메서드 이름 | 실행 시점 |
+|-------------|-----------|
+| `Start()`   | 시작할 때 1회 |
+| `Update()`  | 매 프레임마다 반복 |
+| `OnCollisionEnter()` | 충돌했을 때 |
+| `OnTriggerEnter()`   | 트리거에 들어왔을 때 |
+
+---
+
+## ✅ 정리
+
+| 문법 | 실전 사용 예 |
+|------|----------------|
+| 변수 | 체력, 속도, 점수 저장 |
+| 조건문 | 키 입력, 충돌 판단 |
+| 반복문 | 총알 여러 개 생성, 시간 흐름 |
+| 클래스 | Player, Enemy, Item 등 오브젝트 동작 제어 |
+
+---
+
+## 📎 참고 링크
+
+- [Unity C# 문법 요약 (공식 튜토리얼)](https://learn.unity.com/)
+- [C# for Unity Developers](https://docs.unity3d.com/Manual/UnderstandingAutomaticMemoryManagement.html)
