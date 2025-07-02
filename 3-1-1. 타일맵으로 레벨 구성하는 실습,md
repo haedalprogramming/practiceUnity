@@ -1,1 +1,87 @@
+# 🧱 Tilemap으로 레벨 구성하는 실습
+
+> Unity 2D 게임 개발의 핵심 구성 요소인 **스프라이트(Sprite), 타일맵(Tilemap), 충돌체(Collider)** 시스템을 이해하고 직접 씬을 구성하는 3시간 분량의 실습 중심 수업입니다.
+
+---
+
+## 🧱 준비물
+
+- Unity 2D URP 프로젝트
+- 2D Tileset 이미지 (무료 에셋 스토어 또는 `.png`)
+- 바닥, 벽, 배경용 타일 분리 이미지
+
+---
+
+## 1. 🖼️ Sprite와 Sprite Renderer
+
+### 1-1. 스프라이트(Sprites)란?
+- 2D 그래픽에서 사용되는 이미지 단위
+- `.png` 또는 `.psd` 등 투명 배경 가능
+
+### 1-2. Sprite 설정 방법
+- Project 창에 이미지 drag & drop
+- `Texture Type`을 `Sprite (2D and UI)`로 변경
+- 단일 vs 멀티 스프라이트로 자르기 (`Sprite Editor` 사용)
+
+---
+
+## 2. 🧩 Tilemap 시스템
+
+### 2-1. Grid + Tilemap 생성
+- Hierarchy > 2D Object > Tilemap > Rectangular 선택
+- 자동으로 `Grid` + `Tilemap` GameObject 생성됨
+
+### 2-2. Tile Asset 만들기
+- 이미지 import → Tile 폴더에 드래그
+- `Tile` 에셋 생성됨 → 이름 지정 (`Tile_Ground`, `Tile_Wall` 등)
+
+### 2-3. 타일맵 그리기
+- `Tile Palette` 창 열기 (Window > 2D > Tile Palette)
+- 드래그하여 등록 후 `Brush Tool`로 씬에 직접 그리기
+
+---
+
+## 3. 🛡️ Collider 2D 적용
+
+### 3-1. 타일맵에 Collider 붙이기
+- `Tilemap` 선택 → `TilemapCollider2D` 추가
+- 물리 적용하려면 `Rigidbody2D`도 함께 추가 (Body Type: Static)
+
+### 3-2. 캐릭터와 충돌 작동 확인
+- 플레이어 오브젝트에 `Rigidbody2D`, `BoxCollider2D` 적용
+- 점프 후 타일맵에 착지되는지 확인
+
+---
+
+## 4. 🎯 실습 목표
+
+- [ ] 바닥, 벽, 배경이 분리된 타일맵 생성
+- [ ] TilePalette에 최소 6종 이상의 타일 등록
+- [ ] 캐릭터가 타일 위를 걷고 점프 가능
+- [ ] Collider 오차 없이 정확히 충돌하도록 정리
+
+---
+
+## 💬 추가 팁
+
+- 타일마다 `Physics Material 2D` 적용 가능 (예: 미끄러운 얼음)
+- Grid Snapping 기능으로 정확하게 배치 (Ctrl + Shift)
+- 플레이어가 벽에 끼지 않도록 콜라이더 범위 확인
+
+---
+
+## 🧠 정리
+
+| 개념        | 핵심 설명                           |
+|-------------|-------------------------------------|
+| Sprite      | 개별 2D 이미지, 캐릭터 및 오브젝트용     |
+| Tilemap     | 여러 스프라이트를 격자에 자동 배치       |
+| Collider 2D | 충돌을 감지하고 물리 효과 적용           |
+
+---
+
+## 🔗 참고 자료
+
+- [Unity 공식 2D Tilemap 가이드](https://learn.unity.com/tutorial/2d-peulraespomeo-modeu-rebel-caesaeghagi#)
+- [Brackeys 타일맵 강좌 (YouTube)](https://www.youtube.com/watch?v=ryISV_nH8qw)
 
