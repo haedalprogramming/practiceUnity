@@ -18,8 +18,7 @@ Scene 뷰는 Unity에서 게임 오브젝트를 **배치·편집·설계**하는
 - `R`: 크기 조절
 - `F`: 선택한 오브젝트로 포커스
 
-<!-- 이미지: Scene 뷰 전체 인터페이스 -->
-<!-- ![Scene View](images/unity_scene_view.png) -->
+
 
 ---
 
@@ -33,8 +32,7 @@ Game 뷰는 **카메라를 통해 보이는 시점**으로, 게임을 실행했�
 
 🔧 주의: Play 모드에서 변경한 내용은 저장되지 않음!
 
-<!-- 이미지: Game 뷰 예시 화면 -->
-<!-- ![Game View](images/unity_game_view.png) -->
+
 
 ---
 
@@ -48,8 +46,7 @@ Inspector는 선택한 오브젝트의 **속성, 컴포넌트, 스크립트 등 
 
 > 🎯 핵심: Unity에서 오브젝트 동작을 제어하려면 Inspector에서 컴포넌트를 조절하는 게 기본!
 
-<!-- 이미지: Inspector 창 예시 -->
-<!-- ![Inspector](images/unity_inspector_panel.png) -->
+
 
 ---
 
