@@ -1,1 +1,113 @@
+# 🎮 FPSController 조작 실습
+
+## 🧠 실습 목표
+
+- Unity에서 1인칭 시점(FPS) 게임 플레이어 컨트롤러를 구성한다.
+- 마우스를 이용한 시점 회전과 키보드 이동을 구현한다.
+- Unity의 Character Controller를 활용해 부드러운 1인칭 이동을 체험한다.
+
+---
+
+## 1. 프로젝트 준비
+
+- 새 3D 프로젝트 또는 기존 `3D Playground` 프로젝트 사용
+- `Main Camera`는 비활성화하거나 삭제
+
+---
+
+## 2. 오브젝트 구성
+
+### Player 오브젝트 생성
+- Empty GameObject → 이름: `FPSPlayer`
+- 하위에 **Capsule** 추가 (이동 캐릭터용)
+- **Camera** 추가 (Capsule의 머리 위치)
+
+구성 구조:
+```
+FPSPlayer
+ ├── Capsule
+ └── Main Camera (눈 위치, 높이 조절)
+```
+
+---
+
+## 3. Character Controller 추가
+
+- `FPSPlayer`에 **Character Controller** 컴포넌트 추가
+- Center와 Height 조정: 캡슐과 일치시키기
+
+---
+
+## 4. C# 스크립트: `FPSController.cs`
+
+```csharp
+using UnityEngine;
+
+public class FPSController : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+    public float mouseSensitivity = 2f;
+    public Transform cameraTransform;
+
+    float verticalRotation = 0f;
+    CharacterController controller;
+
+    void Start()
+    {
+        controller = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update()
+    {
+        // 마우스 회전
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        transform.Rotate(0, mouseX, 0);
+
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
+        cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+
+        // 키보드 이동
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        Vector3 move = transform.right * h + transform.forward * v;
+        controller.Move(move * moveSpeed * Time.deltaTime);
+    }
+}
+```
+
+> ☑️ `cameraTransform`에 Main Camera 연결
+
+---
+
+## 5. 조작 테스트
+
+- **WASD**: 앞뒤좌우 이동
+- **마우스 이동**: 시점 회전
+- **ESC**: 커서 잠금 해제 (에디터에서 수동 해제 필요)
+
+---
+
+## ✅ 점검 항목
+
+- [ ] FPSPlayer에 Character Controller가 정상 작동하는가?
+- [ ] 시점 회전이 자연스럽고 멀미가 없는가?
+- [ ] 지형과 충돌 반응이 자연스러운가?
+
+---
+
+## 💡 팁
+
+- 지형 위에서 시작하지 않으면 낙하할 수 있음 → Plane 준비
+- 마우스 감도는 개인에 따라 조절 필요
+- Rigidbody는 비활성화 (CharacterController는 중복 충돌 관리 주의)
+
+---
+
+## 🔗 참고 자료
+
+- [Unity 공식 First Person Controller 문서](https://docs.unity3d.com/Manual/FirstPersonController.html)
+- [Input System vs Legacy Input 비교](https://learn.unity.com/tutorial/input-system-vs-input-manager)
 
